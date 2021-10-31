@@ -27,9 +27,11 @@ const getAllDenuncia = async (req, res, next) => {
           doc.id,
           doc.data().nome,
           doc.data().email,
+
+          doc.data().cidade,
           doc.data().rua,
           doc.data().problema,
-          doc.data().cidade,
+
           doc.data().descricao,
         );
         problemaArray.push(problema);
@@ -45,7 +47,7 @@ const getDenuncia = async (req, res, next) => {
   try {
     const id = req.params.id;
     const denuncia = await firestore.collection('denuncias').doc(id);
-    const data = await denuncia.get();
+    const data = await denuncia.onSnapshot();
     if (!data.exists) {
       res.status(404).send('nenhuma denúncia foi encontrada');
     } else {
