@@ -27,11 +27,9 @@ const getAllDenuncia = async (req, res, next) => {
           doc.id,
           doc.data().nome,
           doc.data().email,
-
           doc.data().cidade,
           doc.data().rua,
           doc.data().problema,
-
           doc.data().descricao,
         );
         problemaArray.push(problema);
