@@ -13,6 +13,6 @@ app.use(bodyParser.json());
 
 app.use('/api', denunciaRoutes.routes);
 
-app.listen(config.port, () =>
+app.listen(process.env.PORT || config.port, () =>
   console.log('App is listening on url http://localhost:' + config.port),
 );
