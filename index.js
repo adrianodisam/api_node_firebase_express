@@ -14,5 +14,5 @@ app.use(bodyParser.json());
 app.use('/api', denunciaRoutes.routes);
 
 app.listen(process.env.PORT || config.port, () =>
-  console.log('App is listening on url http://localhost:' + config.port),
+  console.log('servidor rodando http://localhost:' + config.port),
 );
